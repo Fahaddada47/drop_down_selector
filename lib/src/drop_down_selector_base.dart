@@ -48,7 +48,7 @@ class DropDownSelector extends StatelessWidget {
     this.contentPadding,
     this.suffixIcon = const Icon(Icons.arrow_drop_down_circle_outlined),  // Default suffix icon
     this.itemTextStyle,
-    this.elevation = 8.0,
+    this.elevation = 8.0,  // Default elevation
     this.iconSize = 24.0,
     this.isExpanded = true,
     this.width,
@@ -128,8 +128,8 @@ class DropDownSelector extends StatelessWidget {
             onChanged: onChanged,
             validator: validator,
             dropdownColor: dropdownColor,
-            elevation: elevation!.toInt(),
-            icon: suffixIcon, // Icon displayed on the right side
+            elevation: elevation?.toInt() ?? 8,
+            icon: suffixIcon,
             iconSize: iconSize,
             isExpanded: isExpanded,
           ),
