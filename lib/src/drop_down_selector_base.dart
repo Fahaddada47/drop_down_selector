@@ -48,7 +48,7 @@ class DropDownSelector extends StatelessWidget {
     this.borderRadius = 8.0,
     this.contentPadding,
     this.prefixIcon,
-    this.suffixIcon,
+    this.suffixIcon = const Icon(Icons.arrow_drop_down_circle_outlined),  // Default suffix icon
     this.itemTextStyle,
     this.elevation = 8.0,
     this.iconSize = 24.0,
