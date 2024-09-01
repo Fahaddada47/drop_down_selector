@@ -17,8 +17,8 @@ class DropDownSelector extends StatelessWidget {
   final Color? labelColor;
   final double borderRadius;
   final EdgeInsetsGeometry? contentPadding;
-  final Icon? prefixIcon;
-  final Widget? suffixIcon;
+  // final Icon? prefixIcon;
+  // final Widget? suffixIcon;
   final TextStyle? itemTextStyle;
   final double? elevation;
   final double iconSize;
@@ -47,8 +47,8 @@ class DropDownSelector extends StatelessWidget {
     this.labelColor = const Color(0xff828290),
     this.borderRadius = 8.0,
     this.contentPadding,
-    this.prefixIcon,
-    this.suffixIcon = const Icon(Icons.arrow_drop_down_circle_outlined),  // Default suffix icon
+    // this.prefixIcon,
+    // this.suffixIcon = const Icon(Icons.arrow_drop_down_circle_outlined),  // Default suffix icon
     this.itemTextStyle,
     this.elevation = 8.0,
     this.iconSize = 24.0,
@@ -102,8 +102,8 @@ class DropDownSelector extends StatelessWidget {
           color: errorBorderColor!,
         ),
       ),
-      prefixIcon: prefixIcon,
-      suffixIcon: suffixIcon,
+      // prefixIcon: prefixIcon,
+      // suffixIcon: suffixIcon,
     );
   }
 
