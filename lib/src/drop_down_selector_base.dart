@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DropDownSelector extends StatelessWidget {
-  final String? selectedValue;
-  final List<String> items;
-  final String hintText;
-  final ValueChanged<String?> onChanged;
-  final FormFieldValidator<String?>? validator;
+  final dynamic selectedValue;
+  final List<dynamic> items;
+  final dynamic hintText;
+  final ValueChanged<dynamic> onChanged;
+  final FormFieldValidator<dynamic>? validator;
 
   // Additional parameters for more customization
   final Color? borderColor;
@@ -116,7 +116,7 @@ class DropDownSelector extends StatelessWidget {
             decoration: _buildInputDecoration(),
             value: selectedValue,
             hint: Text(hintText),
-            items: items.map((String value) {
+            items: items.map((dynamic value) {
               return DropdownMenuItem<String>(
                 value: value,
                 child: Text(
