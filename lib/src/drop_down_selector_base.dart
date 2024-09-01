@@ -28,6 +28,9 @@ class DropDownSelector extends StatelessWidget {
   final double? width;
   final double? height;
 
+  // Label widget
+  final Widget? labelWidget;
+
   const DropDownSelector({
     Key? key,
     required this.selectedValue,
@@ -52,6 +55,7 @@ class DropDownSelector extends StatelessWidget {
     this.isExpanded = true,
     this.width,
     this.height,
+    this.labelWidget,
   }) : super(key: key);
 
   InputDecoration _buildInputDecoration() {
@@ -105,29 +109,35 @@ class DropDownSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: width,  // Set width
-      height: height,  // Set height
-      child: DropdownButtonFormField<String>(
-        decoration: _buildInputDecoration(),
-        value: selectedValue,
-        hint: Text(hintText),
-        items: items.map((String value) {
-          return DropdownMenuItem<String>(
-            value: value,
-            child: Text(
-              value,
-              style: itemTextStyle ?? TextStyle(fontSize: fontSize),
-            ),
-          );
-        }).toList(),
-        onChanged: onChanged,
-        validator: validator,
-        dropdownColor: dropdownColor,
-        elevation: elevation!.toInt(),
-        iconSize: iconSize,
-        isExpanded: isExpanded,
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (labelWidget != null) labelWidget!,
+        SizedBox(
+          width: width,  // Set width
+          height: height,  // Set height
+          child: DropdownButtonFormField<String>(
+            decoration: _buildInputDecoration(),
+            value: selectedValue,
+            hint: Text(hintText),
+            items: items.map((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(
+                  value,
+                  style: itemTextStyle ?? TextStyle(fontSize: fontSize),
+                ),
+              );
+            }).toList(),
+            onChanged: onChanged,
+            validator: validator,
+            dropdownColor: dropdownColor,
+            elevation: elevation?.toInt(),
+            iconSize: iconSize,
+            isExpanded: isExpanded,
+          ),
+        ),
+      ],
     );
   }
 }
