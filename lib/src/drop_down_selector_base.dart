@@ -17,7 +17,6 @@ class DropDownSelector extends StatelessWidget {
   final Color? labelColor;
   final double borderRadius;
   final EdgeInsetsGeometry? contentPadding;
-  final Icon? prefixIcon;
   final Widget? suffixIcon;
   final TextStyle? itemTextStyle;
   final double? elevation;
@@ -47,7 +46,6 @@ class DropDownSelector extends StatelessWidget {
     this.labelColor = const Color(0xff828290),
     this.borderRadius = 8.0,
     this.contentPadding,
-    this.prefixIcon,
     this.suffixIcon = const Icon(Icons.arrow_drop_down_circle_outlined),  // Default suffix icon
     this.itemTextStyle,
     this.elevation = 8.0,
@@ -115,7 +113,6 @@ class DropDownSelector extends StatelessWidget {
           width: width,  // Set width
           height: height,  // Set height
           child: DropdownButtonFormField<String>(
-           icon: suffixIcon,
             decoration: _buildInputDecoration(),
             value: selectedValue,
             hint: Text(hintText),
@@ -132,6 +129,7 @@ class DropDownSelector extends StatelessWidget {
             validator: validator,
             dropdownColor: dropdownColor,
             elevation: elevation!.toInt(),
+            icon: suffixIcon, // Icon displayed on the right side
             iconSize: iconSize,
             isExpanded: isExpanded,
           ),
