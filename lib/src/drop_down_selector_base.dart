@@ -102,8 +102,6 @@ class DropDownSelector extends StatelessWidget {
           color: errorBorderColor!,
         ),
       ),
-      prefixIcon: prefixIcon,
-      suffixIcon: suffixIcon,
     );
   }
 
@@ -117,6 +115,7 @@ class DropDownSelector extends StatelessWidget {
           width: width,  // Set width
           height: height,  // Set height
           child: DropdownButtonFormField<String>(
+           icon: suffixIcon,
             decoration: _buildInputDecoration(),
             value: selectedValue,
             hint: Text(hintText),
