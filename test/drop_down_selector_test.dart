@@ -1,16 +1,26 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:drop_down_selector/drop_down_selector.dart';
-import 'package:test/test.dart';
 
 void main() {
-  group('A group of tests', () {
-    final awesome = Awesome();
+  testWidgets('DropDownSelector widget test', (WidgetTester tester) async {
+    String? selectedValue;
 
-    setUp(() {
-      // Additional setup goes here.
-    });
+    await tester.pumpWidget(
+      MaterialApp(
+        home: Scaffold(
+          body: DropDownSelector(
+            selectedValue: selectedValue,
+            items: ['Option 1', 'Option 2'],
+            hintText: 'Select an option',
+            onChanged: (newValue) {
+              selectedValue = newValue;
+            },
+          ),
+        ),
+      ),
+    );
 
-    test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
-    });
+    expect(find.text('Select an option'), findsOneWidget);
   });
 }
