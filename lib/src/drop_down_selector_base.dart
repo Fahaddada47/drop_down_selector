@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class DropDownSelector extends StatelessWidget {
@@ -7,13 +6,27 @@ class DropDownSelector extends StatelessWidget {
   final String hintText;
   final ValueChanged<String?> onChanged;
   final FormFieldValidator<String?>? validator;
+
+  // Additional parameters for more customization
   final Color? borderColor;
   final Color? focusedBorderColor;
+  final Color? errorBorderColor;
+  final Color? dropdownColor;
   final double? fontSize;
   final Color? hintColor;
   final Color? labelColor;
   final double borderRadius;
   final EdgeInsetsGeometry? contentPadding;
+  final Icon? prefixIcon;
+  final Widget? suffixIcon;
+  final TextStyle? itemTextStyle;
+  final double? elevation;
+  final double iconSize;
+  final bool isExpanded;
+
+  // Parameters to control size
+  final double? width;
+  final double? height;
 
   const DropDownSelector({
     Key? key,
@@ -24,11 +37,21 @@ class DropDownSelector extends StatelessWidget {
     this.validator,
     this.borderColor = const Color(0xFFD7D7FF),
     this.focusedBorderColor = const Color(0xFF5D5CFF),
+    this.errorBorderColor = Colors.red,
+    this.dropdownColor,
     this.fontSize = 14.0,
     this.hintColor = const Color(0xffBEBEBE),
     this.labelColor = const Color(0xff828290),
     this.borderRadius = 8.0,
     this.contentPadding,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.itemTextStyle,
+    this.elevation = 8.0,
+    this.iconSize = 24.0,
+    this.isExpanded = true,
+    this.width,
+    this.height,
   }) : super(key: key);
 
   InputDecoration _buildInputDecoration() {
@@ -65,33 +88,46 @@ class DropDownSelector extends StatelessWidget {
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(borderRadius),
-        borderSide: const BorderSide(
-          color: Colors.red,
+        borderSide: BorderSide(
+          color: errorBorderColor!,
         ),
       ),
       focusedErrorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(borderRadius),
-        borderSide: const BorderSide(
-          color: Colors.red,
+        borderSide: BorderSide(
+          color: errorBorderColor!,
         ),
       ),
+      prefixIcon: prefixIcon,
+      suffixIcon: suffixIcon,
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return DropdownButtonFormField<String>(
-      decoration: _buildInputDecoration(),
-      value: selectedValue,
-      hint: Text(hintText),
-      items: items.map((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      }).toList(),
-      onChanged: onChanged,
-      validator: validator,
+    return SizedBox(
+      width: width,  // Set width
+      height: height,  // Set height
+      child: DropdownButtonFormField<String>(
+        decoration: _buildInputDecoration(),
+        value: selectedValue,
+        hint: Text(hintText),
+        items: items.map((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(
+              value,
+              style: itemTextStyle ?? TextStyle(fontSize: fontSize),
+            ),
+          );
+        }).toList(),
+        onChanged: onChanged,
+        validator: validator,
+        dropdownColor: dropdownColor,
+        elevation: elevation!.toInt(),
+        iconSize: iconSize,
+        isExpanded: isExpanded,
+      ),
     );
   }
 }
