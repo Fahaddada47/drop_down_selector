@@ -1,17 +1,17 @@
-import 'package:flutter/material.dart';
 import 'package:drop_down_selector/drop_down_selector.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DropDownSelector Example',
+      title: 'DropDownSelector Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -21,27 +21,27 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String? _selectedPaymentMethod;
+  String? _selectedValue;
 
-  final List<String> _paymentMethods = [
-    'Credit Card',
-    'PayPal',
-    'Bank Transfer',
-    'Cash'
+  final List<String> _options = [
+    'Option 1',
+    'Option 2',
+    'Option 3',
+    'Option 4',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('DropDownSelector Example'),
+        title: const Text('DropDownSelector Demo'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -49,17 +49,20 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             DropDownSelector(
-              selectedValue: _selectedPaymentMethod,
-              items: _paymentMethods,
-              hintText: 'Select payment method',
+              width: 290,
+              height: 50,
+              iconSize: 24,
+              selectedValue: _selectedValue,
+              items: _options,
+              hintText: 'Select an option',
               onChanged: (newValue) {
                 setState(() {
-                  _selectedPaymentMethod = newValue;
+                  _selectedValue = newValue;
                 });
               },
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please select a payment method';
+                  return 'Please select an option';
                 }
                 return null;
               },
