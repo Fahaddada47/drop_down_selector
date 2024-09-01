@@ -132,7 +132,7 @@ class DropDownSelector extends StatelessWidget {
             onChanged: onChanged,
             validator: validator,
             dropdownColor: dropdownColor,
-            elevation: elevation?.toInt(),
+            elevation: elevation!.toInt(),
             iconSize: iconSize,
             isExpanded: isExpanded,
           ),
