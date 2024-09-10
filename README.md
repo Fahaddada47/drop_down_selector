@@ -14,10 +14,10 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  drop_down_selector: ^0.0.1
+  list_item_selector: ^1.0.0
 
 Expample
-DropDownSelector(
+ListItemSelector(
   selectedValue: _selectedValue,
   items: ['Option 1', 'Option 2', 'Option 3'],
   hintText: 'Select an option',

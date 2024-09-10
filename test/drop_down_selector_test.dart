@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:list_item_selector/drop_down_selector.dart';
+import 'package:list_item_selector/list_item_selector.dart';
 
 void main() {
   testWidgets('DropDownSelector widget test', (WidgetTester tester) async {
