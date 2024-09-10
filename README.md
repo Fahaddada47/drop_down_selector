@@ -1,4 +1,4 @@
-# DropDownSelector
+# ListItemSelector 
 
 A customizable dropdown selector widget for Flutter.
 
