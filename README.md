@@ -15,7 +15,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  list_item_selector: ^1.0.0
+  list_item_selector: ^1.0.1
 ```
 
 ## Example
