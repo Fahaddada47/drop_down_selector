@@ -1,4 +1,4 @@
-## [1.0.1] - 2024-09-10
+## [1.0.0] - 2024-09-10
 - Initial release of the ListItemSelector widget.
 - Features:
    - Customizable borders, colors, and fonts.
