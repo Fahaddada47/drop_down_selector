@@ -1,6 +1,6 @@
 name: list_item_selector
 description: "A Flutter package that provides a customizable dropdown selector with dynamic list of data."
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/Fahaddada47/list_item_selector
 repository: https://github.com/Fahaddada47/list_item_selector
 
