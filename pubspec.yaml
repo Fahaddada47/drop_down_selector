@@ -21,6 +21,13 @@ topics:
   - dropdown
   - customization
 
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
 
 flutter:
   uses-material-design: true

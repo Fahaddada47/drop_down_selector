@@ -1,7 +1,8 @@
-
-2. **Create `CHANGELOG.md`**:
-   Track changes to your package here.
-
-```markdown
-## [0.0.1] - 2024-09-10
-- Initial release with customizable dropdown selector.
+## [1.0.0] - 2024-09-10
+- Initial release of the DropDownSelector widget.
+- Features:
+   - Customizable borders, colors, and fonts.
+   - Dropdown validation support.
+   - Custom icons and padding options.
+   - Flexible width and height.
+   - Dropdown expansion option.
