@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            DropDownSelector(
+            ListItemSelector(
               width: 290,
               height: 50,
               iconSize: 24,

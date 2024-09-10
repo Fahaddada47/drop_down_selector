@@ -9,7 +9,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
-          body: DropDownSelector(
+          body: ListItemSelector(
             selectedValue: selectedValue,
             items: ['Option 1', 'Option 2'],
             hintText: 'Select an option',

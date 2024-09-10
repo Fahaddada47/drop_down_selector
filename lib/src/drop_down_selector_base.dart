@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DropDownSelector extends StatelessWidget {
+class ListItemSelector extends StatelessWidget {
   final String? selectedValue;
   final List<String> items;
   final String hintText;
@@ -30,7 +30,7 @@ class DropDownSelector extends StatelessWidget {
   // Label widget
   final Widget? labelWidget;
 
-  const DropDownSelector({
+  const ListItemSelector({
     Key? key,
     required this.selectedValue,
     required this.items,
@@ -46,7 +46,7 @@ class DropDownSelector extends StatelessWidget {
     this.labelColor = const Color(0xff828290),
     this.borderRadius = 8.0,
     this.contentPadding,
-    this.suffixIcon = const Icon(Icons.arrow_drop_down_circle_outlined),  // Default suffix icon
+    this.suffixIcon = const Icon(Icons.arrow_drop_down_circle_outlined),
     this.itemTextStyle,
     this.elevation = 8.0,  // Default elevation
     this.iconSize = 24.0,
