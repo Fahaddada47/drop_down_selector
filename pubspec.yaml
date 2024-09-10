@@ -2,6 +2,7 @@ name: drop_down_selector
 description: "A Flutter package that provides a customizable dropdown selector with dynamic list of data."
 version: 1.0.0
 homepage: https://github.com/Fahaddada47/drop_down_selector
+repository: https://github.com/Fahaddada47/drop_down_selector
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -18,16 +19,8 @@ dev_dependencies:
 
 topics:
   - dropdown
-  - ui
   - customization
 
-platforms:
-  android:
-  ios:
-  linux:
-  macos:
-  web:
-  windows:
 
 flutter:
   uses-material-design: true

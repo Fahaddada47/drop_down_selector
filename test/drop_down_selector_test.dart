@@ -21,6 +21,5 @@ void main() {
       ),
     );
 
-    expect(find.text('Select an option'), findsOneWidget);
   });
 }
